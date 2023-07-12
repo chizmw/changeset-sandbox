@@ -1,5 +1,11 @@
 # changeset-sandbox
 
+## 0.0.9
+
+### Patch Changes
+
+- add Github Release workflow; triggered on new tags ([#19](https://github.com/chizmw/changeset-sandbox/pull/19))
+
 ## 0.0.8
 
 ### Patch Changes
