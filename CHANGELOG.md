@@ -1,5 +1,11 @@
 # changeset-sandbox
 
+## 0.0.7
+
+### Patch Changes
+
+- a895e46: use --tags instead of --follow-tags
+
 ## 0.0.6
 
 ### Patch Changes
