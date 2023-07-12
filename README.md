@@ -143,3 +143,23 @@ did something wrong to get where we are now.
 Nonetheless, it's a good start!
 
 ![CHANGELOG 0.0.2](docs/images/005-changelog-002.png)
+
+## Tagging When Changelog Released
+
+It took some experimentation, but this seems to be the simplest way to create
+and push a tag (if you aren't already doing clever things with `yarn release`
+and actual `npm` packages):
+
+```yaml
+- name: Push Tags
+  # https://github.com/changesets/action#custom-publishing
+  if: steps.changesets.outputs.hasChangesets == 'false'
+  shell: bash
+  run: |
+    version="$(cat package.json | jq -r '.version')"
+    git tag "v$version"
+    git push --tag
+```
+
+After finding the correct incantation we automatically created
+[v0.0.7](https://github.com/chizmw/changeset-sandbox/releases/tag/v0.0.7)
