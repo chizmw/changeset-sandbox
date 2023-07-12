@@ -1,5 +1,13 @@
 # changeset-sandbox
 
+## 0.0.3
+
+### Patch Changes
+
+- 301eecc: add .markdownlint.jsonc and .markdownlintignore config files
+- d47cc62: set the PR title created by changesets
+- 4e7dfee: add more information to README.md
+
 ## 0.0.2
 
 ### Patch Changes
