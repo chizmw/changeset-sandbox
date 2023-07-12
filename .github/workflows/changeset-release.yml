@@ -43,4 +43,6 @@ jobs:
         if: steps.changesets.outputs.hasChangesets == 'false'
         shell: bash
         run: |
+          version="$(cat package.json | jq -r '.version')"
+          git tag "v$version"
           git push --follow-tags
