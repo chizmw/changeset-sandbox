@@ -1,5 +1,12 @@
 # changeset-sandbox
 
+## 0.0.4
+
+### Patch Changes
+
+- fad5729: replace ad-m/github-push-action with bare bash
+- ee781fd: add workflow step to push tags
+
 ## 0.0.3
 
 ### Patch Changes
