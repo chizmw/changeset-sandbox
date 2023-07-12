@@ -1,5 +1,11 @@
 # changeset-sandbox
 
+## 0.0.5
+
+### Patch Changes
+
+- 69e1b85: update rule for Push Tags in workflow
+
 ## 0.0.4
 
 ### Patch Changes
