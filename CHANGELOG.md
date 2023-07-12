@@ -1,5 +1,11 @@
 # changeset-sandbox
 
+## 0.0.8
+
+### Patch Changes
+
+- use changesets-changelog-github-compact ([#17](https://github.com/chizmw/changeset-sandbox/pull/17))
+
 ## 0.0.7
 
 ### Patch Changes
