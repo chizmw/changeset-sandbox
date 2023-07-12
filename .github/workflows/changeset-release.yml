@@ -9,6 +9,8 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+permissions: read-all
+
 jobs:
   release:
     # IMPORTANT: prevent this action from running on forks
