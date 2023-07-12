@@ -1,5 +1,11 @@
 # changeset-sandbox
 
+## 0.0.6
+
+### Patch Changes
+
+- 3a351ec: get the version, create and push tag
+
 ## 0.0.5
 
 ### Patch Changes
