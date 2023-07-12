@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@changesets/cli": "^2.26.2"
+  },
+  "name": "changeset-sandbox",
+  "version": "0.0.1",
+  "description": "A sandbox to play with changesets",
+  "main": "index.js",
+  "repository": "git@github.com:chizmw/changeset-sandbox.git",
+  "author": "Chisel <chisel@malik-wright.uk>",
+  "license": "GPL-3.0-or-later"
+}
