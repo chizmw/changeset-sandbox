@@ -186,3 +186,12 @@ We updated the config file to use this:
   // ...
 }
 ```
+
+To be safe, we granted the
+[workflow](.github/workflows/changeset-release.yml)
+`read-all` permissions by adding the
+following before the `jobs:`
+
+```yaml
+permissions: read-all
+```
