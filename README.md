@@ -195,3 +195,36 @@ following before the `jobs:`
 ```yaml
 permissions: read-all
 ```
+
+### Creating Github Releases
+
+Now that we have stable changelog creation, and tags being created when
+changelogs are baked, we would like to automatically create a release when a
+new tag is pushed.
+
+The first step is to add the workflow;
+[.github/workflows/github-release.yml](.github/workflows/github-release.yml)
+
+While we are still using `secrets.GITHUB_TOKEN` the new workflow will not
+trigger. The default token
+[does NOT create any new workflow runs](https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#triggering-a-workflow-from-a-workflow)
+
+To resolve this we need to create a Personal Access Token that we can use
+instead of `secrets.GITHUB_TOKEN`
+
+1. visit [Settings > Tokens (Classic)](https://github.com/settings/tokens)
+1. create a [new Classic token](https://github.com/settings/tokens/new)
+   with the following permissions:
+
+   1. `repo`
+   1. `read:user`
+   1. `read:project`
+
+1. create a new secret in "Settings » Secrets and variables » Actions":
+
+   1. Name: `CHANGESETS_TOKEN`
+   2. Secret: _use the value of the token you just created_
+
+You should then update the
+[changeset release workflow](.github/workflows/changeset-release.yml)
+to use `secrets.CHANGESETS_TOKEN` instead of `secrets.GITHUB_TOKEN`

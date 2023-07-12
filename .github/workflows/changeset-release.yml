@@ -9,7 +9,7 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
-permissions: read-all
+permissionyys: read-all
 
 jobs:
   release:
@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.CHANGESETS_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
