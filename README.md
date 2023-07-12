@@ -163,3 +163,26 @@ and actual `npm` packages):
 
 After finding the correct incantation we automatically created
 [v0.0.7](https://github.com/chizmw/changeset-sandbox/releases/tag/v0.0.7)
+
+### Nicer Changelog Entries
+
+After a short search we found something that seems to do just what we hoped
+for, without needing to write it ourselves:
+
+```sh
+yarn add @svitejs/changesets-changelog-github-compact
+```
+
+We updated the config file to use this:
+
+```jsonc
+// .changeset/config.json
+{
+  // ...
+  "changelog": [
+    "@svitejs/changesets-changelog-github-compact",
+    { "repo": "chizmw/changeset-sandbox" }
+  ]
+  // ...
+}
+```
