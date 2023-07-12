@@ -16,7 +16,7 @@ jobs:
     permissions:
       contents: write # to create release (changesets/action)
       pull-requests: write # to create pull request (changesets/action)
-    name: Release
+    name: Changeset Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -31,6 +31,7 @@ jobs:
         run: yarn
 
       - name: Create Release Pull Request
+        id: changesets
         uses: changesets/action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -38,7 +39,7 @@ jobs:
           title: Release Changeset (bake CHANGELOG.md)
 
       - name: Push Tags
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          tags: true
+        if: steps.changesets.outputs.published == 'true'
+        shell: bash
+        run: |
+          git push --follow-tags
