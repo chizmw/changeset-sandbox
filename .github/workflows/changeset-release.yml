@@ -11,6 +11,11 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
+    # IMPORTANT: prevent this action from running on forks
+    if: github.repository == 'chizmw/changeset-sandbox'
+    permissions:
+      contents: write # to create release (changesets/action)
+      pull-requests: write # to create pull request (changesets/action)
     name: Release
     runs-on: ubuntu-latest
     steps:
