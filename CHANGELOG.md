@@ -1,5 +1,11 @@
 # changeset-sandbox
 
+## 0.0.11
+
+### Patch Changes
+
+- add changeblob information to github release ([#25](https://github.com/chizmw/changeset-sandbox/pull/25))
+
 ## 0.0.10
 
 ### Patch Changes
