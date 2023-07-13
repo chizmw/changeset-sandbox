@@ -1,0 +1,34 @@
+---
+# .github/workflows/auto-author-assign.yml
+name: Peek At Changelog Info
+
+# yamllint disable-line rule:truthy
+on:
+  - pull_request
+
+jobs:
+  changelog-peek:
+    name: Changeset Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Get version from tag
+        id: tag_name
+        run: |
+          echo current_version=${GITHUB_REF#refs/tags/v} >> $GITHUB_OUTPUT
+
+      - name: Get Changelog Entry
+        id: changelog_reader
+        uses: mindsers/changelog-reader-action@v2
+        with:
+          validation_level: warn
+          # version: ${{ steps.tag_name.outputs.current_version }}
+          version: 0.0.10
+          path: ./CHANGELOG.md
+
+      - name: Print the changelog
+        # yamllint disable rule:line-length
+        run: |
+          echo "${{ steps.tag_name.outputs.current_version }}" >> $GITHUB_STEP_SUMMARY
