@@ -14,21 +14,19 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: Get version from tag
-        id: tag_name
-        run: |
-          echo current_version=${GITHUB_REF#refs/tags/v} >> $GITHUB_OUTPUT
+      # LOCAL HACK TO RUN SCRIPT UNTIL WE HAVE SOMETHING MORE GENERAL
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
       - name: Get Changelog Entry
-        id: changelog_reader
-        uses: mindsers/changelog-reader-action@v2
-        with:
-          validation_level: warn
-          # version: ${{ steps.tag_name.outputs.current_version }}
-          version: 0.0.10
-          path: ./CHANGELOG.md
+        shell: bash
+        run: |
+          python helper/last-change.py
 
       - name: Print the changelog
         # yamllint disable rule:line-length
         run: |
-          echo "${{ steps.tag_name.outputs.current_version }}" >> $GITHUB_STEP_SUMMARY
+          cat relinfo.md >> $GITHUB_STEP_SUMMARY
