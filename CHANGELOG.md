@@ -1,5 +1,15 @@
 # changeset-sandbox
 
+## 0.0.10
+
+### Patch Changes
+
+- fix weird typos in workflow ([#22](https://github.com/chizmw/changeset-sandbox/pull/22))
+
+- update changeset release to use CHANGESETS_TOKEN ([#21](https://github.com/chizmw/changeset-sandbox/pull/21))
+
+- add 'Assign PR' workflow ([#24](https://github.com/chizmw/changeset-sandbox/pull/24))
+
 ## 0.0.9
 
 ### Patch Changes
