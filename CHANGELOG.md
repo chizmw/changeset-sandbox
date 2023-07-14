@@ -1,5 +1,15 @@
 # changeset-sandbox
 
+## 0.0.16
+
+### Patch Changes
+
+- test/debug with changesets-changelog-info@v0.0.8 ([#35](https://github.com/chizmw/changeset-sandbox/pull/35))
+
+- update changelog-info.yml to use upstream composite action ([#35](https://github.com/chizmw/changeset-sandbox/pull/35))
+
+- changesets-changelog-info@v0.0.15 ([#35](https://github.com/chizmw/changeset-sandbox/pull/35))
+
 ## 0.0.15
 
 ### Patch Changes
