@@ -1,5 +1,11 @@
 # changeset-sandbox
 
+## 0.0.14
+
+### Patch Changes
+
+- tweak Create Release step ([#31](https://github.com/chizmw/changeset-sandbox/pull/31))
+
 ## 0.0.13
 
 ### Patch Changes
