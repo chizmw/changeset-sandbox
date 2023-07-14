@@ -4,7 +4,7 @@
     "@svitejs/changesets-changelog-github-compact": "^1.1.0"
   },
   "name": "changeset-sandbox",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "A sandbox to play with changesets",
   "main": "index.js",
   "repository": "git@github.com:chizmw/changeset-sandbox.git",
