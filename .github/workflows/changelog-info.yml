@@ -14,19 +14,22 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      # LOCAL HACK TO RUN SCRIPT UNTIL WE HAVE SOMETHING MORE GENERAL
+      - name: Get Change Info
+        uses: chizmw/changesets-changelog-info@v0.0.8
+        id: get-changelog-entry
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-
-      - name: Get Changelog Entry
+      - name: Show Change Info
         shell: bash
-        run: |
-          python helper/last-change.py
-
-      - name: Print the changelog
         # yamllint disable rule:line-length
         run: |
-          cat relinfo.md >> $GITHUB_STEP_SUMMARY
+          cat <<'EOInfo' >> $GITHUB_STEP_SUMMARY
+          ## Last Change Entry
+
+          ```markdown
+          ${{ steps.get-changelog-entry.outputs.last-change-entry }}
+          ```
+          EOInfo
+
+      - name: Fail If Empty
+        if: steps.get-changelog-entry.outputs.last-change-entry == ''
+        run: exit
