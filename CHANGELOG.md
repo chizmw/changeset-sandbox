@@ -1,5 +1,13 @@
 # changeset-sandbox
 
+## 0.0.12
+
+### Patch Changes
+
+- update to use chizmw/changesets-changelog-info@v0.0.4 ([#27](https://github.com/chizmw/changeset-sandbox/pull/27))
+
+- use actions/checkout@v3 ([#27](https://github.com/chizmw/changeset-sandbox/pull/27))
+
 ## 0.0.11
 
 ### Patch Changes
