@@ -52,5 +52,4 @@ jobs:
           release_name: ${{ github.ref }}
           draft: false
           prerelease: false
-          body: |
-            ${{ steps.get-changelog-entry.outputs.last-change-entry }}
+          body: ${{ steps.get-changelog-entry.outputs.last-change-entry }}
