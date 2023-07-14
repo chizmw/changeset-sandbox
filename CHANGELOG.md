@@ -1,5 +1,13 @@
 # changeset-sandbox
 
+## 0.0.15
+
+### Patch Changes
+
+- change release action used (to one not archived) ([#33](https://github.com/chizmw/changeset-sandbox/pull/33))
+
+- force github action debugging ([#33](https://github.com/chizmw/changeset-sandbox/pull/33))
+
 ## 0.0.14
 
 ### Patch Changes
