@@ -39,7 +39,7 @@ jobs:
         if: steps.get-changelog-entry.outputs.last-change-entry != ''
         with:
           body: ${{ steps.get-changelog-entry.outputs.last-change-entry }}
-          tag_name: ${{ github.ref }}
-          name: ${{ github.ref }}
+          tag_name: ${{ steps.get-changelog-entry.outputs.last-change-entry }}
+          name: ${{ steps.get-changelog-entry.outputs.last-change-entry }}
           draft: false
           prerelease: false
