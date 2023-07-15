@@ -1,5 +1,11 @@
 # changeset-sandbox
 
+## 0.0.17
+
+### Patch Changes
+
+- use chizmw/changesets-changelog-info@v0.0.27 ([#37](https://github.com/chizmw/changeset-sandbox/pull/37))
+
 ## 0.0.16
 
 ### Patch Changes
