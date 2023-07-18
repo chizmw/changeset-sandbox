@@ -53,36 +53,3 @@ jobs:
                 echo "::info::CHANGESETS_TOKEN has access to this repo"
             fi
         # yamllint enable rule:line-length
-
-  repo_status:
-    runs-on: ubuntu-latest
-    name: Repo Status
-    steps:
-      - name: Changed Files
-        # use actions/script to get changed files
-        uses: actions/github-script@v5
-        id: changed_files
-        # yamllint disable rule:line-length
-        with:
-          script: |
-            let number = context.payload.number;
-
-            let repo = {
-              repo: context.payload.repository.name,
-              owner: context.payload.repository.owner.login,
-            };
-
-            console.log(repo);
-            console.log(number);
-
-            let changedFilesPromise = github.pulls.listFiles({
-              ...repo,
-              pull_number: number,
-            });
-
-            changedFilesPromise.then((changedFiles) => {
-              let changedFilesList = changedFiles.data.map((file) => file.filename);
-              console.log(changedFilesList);
-              core.setOutput("changed_files", changedFilesList);
-            });
-        # yamllint enable rule:line-length
