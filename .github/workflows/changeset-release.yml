@@ -26,6 +26,14 @@ jobs:
         with:
           token: ${{ secrets.CHANGESETS_TOKEN }}
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: yarn
+
       - name: Create Release Pull Request
         id: changesets
         uses: changesets/action@v1
