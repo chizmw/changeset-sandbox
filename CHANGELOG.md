@@ -1,5 +1,15 @@
 # changeset-sandbox
 
+## 0.0.19
+
+### Patch Changes
+
+- use updated workflows/changeset-release.yml ([#45](https://github.com/chizmw/changeset-sandbox/pull/45))
+
+- fix copy-pasta mistake with outputs.last-change-entry ([#41](https://github.com/chizmw/changeset-sandbox/pull/41))
+
+- add setup node/install deps back into changelog release workflow ([#46](https://github.com/chizmw/changeset-sandbox/pull/46))
+
 ## 0.0.18
 
 ### Patch Changes
